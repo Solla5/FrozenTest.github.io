@@ -1,0 +1,188 @@
+.wrapper{
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+    margin: 0 auto;
+}
+
+
+/* головный центральный элемент який прижме футер донизу main class(page)*/
+.page{
+	flex: 1 1 auto;
+}
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  padding: 5px 0px;
+}
+.header::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+.header__body {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  align-items: center;
+}
+.header__logo {
+  position: relative;
+  z-index: 3;
+}
+
+.header__burger {
+  display: none;
+}
+
+.header__list {
+  display: flex;
+  position: relative;
+  z-index: 2;
+}
+.header__list li{
+  margin: 0px 0px 0px 70px;
+}
+.header__link {
+  color:wheat;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 18px;
+  position: relative;
+  
+}
+.header__link::after{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    bottom:-3px;
+    right: 100px;
+    width: 100%;
+    height: 2px;
+    opacity: 0;
+    background-color: red;
+    transition: all .6s ease;
+}
+.header__link:hover::after{
+    content: "";
+    opacity: 1;
+    position: absolute;
+    bottom: -3px;
+    right: 0;
+    
+}
+.discord{
+    animation: discord 3s ease infinite;
+}
+@keyframes discord{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+    
+}
+@media (max-width:1000px){
+    .discord{
+        display: none;
+    }
+    .header__link{
+        padding: 20px;
+        font-size: 14px;
+        
+    }
+    .header__list li{
+        margin: 0px 0px 0px 40px;
+    }
+}
+@media (max-width:767px){
+  body.lock{
+    overflow: hidden;
+  }
+  .header__logo img{
+    width: 60px;
+}
+  .header__body{
+    height: 50px;
+  }
+  .header__burger{
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    z-index: 3;
+    margin-right: 20px;
+    
+    
+  }
+  .header__burger span{
+    background-color: #fff;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    top: 9px;
+    transition: all .4s ease 0s;
+  }
+  .header__burger::before,
+  .header__burger::after{
+    content: "";
+    background-color: #fff;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    transition: all .4s ease 0s;
+  }
+  .header__burger::before{
+    top: 0;
+  }
+  .header__burger::after{
+    bottom: 0;
+  }
+  .header__burger.active span{
+    transform: scale(0);
+  }
+  .header__burger.active::before{
+    transform: rotate(45deg);
+    top: 9px;
+  }
+  .header__burger.active::after{
+    transform: rotate(-45deg);
+    bottom: 9px;
+  }
+  .header__menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color:rgb(58, 121, 163);
+    padding: 70px 0px 0px 30px;
+    transition: all .4s ease 0s;
+  }
+  .header__menu.active{
+    top: 0;
+  }
+  .header__list{
+    display: block;
+  }
+  .header__list li{
+    margin-bottom: 40px;
+  }
+}

@@ -1,0 +1,118 @@
+body{
+    background-image: url(../img/reg1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.page{
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.imege img{ 
+    min-width: 500px;
+    
+}
+
+
+
+
+
+.accordion {
+    width: 100%;
+    max-width: 500px;
+    margin: 100px auto;
+}
+
+.accordion .accordion__item {
+    margin-bottom: 1px;
+    position: relative
+}
+
+/* заголовки панелей аккордеона */
+.accordion .accordion__title {
+    font-weight: 400;
+    font-size: 30px;
+    color: #ededed;
+    cursor: pointer;
+    background: #315364;
+    padding: 40px 55px;
+    transition: all .2s linear 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* переключатель панелей, положение вниз */
+.accordion .accordion__title::before {
+    content: "";
+    height: 8px;
+    width: 8px;
+    display: block;
+    border: 2px solid #fefcfe;
+    border-right-width: 0;
+    border-top-width: 0;
+    transform: rotate(-45deg);
+    position: absolute;
+    right: 20px;
+    top: 18px
+}
+
+/* активный переключатель, положение вверх */
+.accordion .active__item .accordion__title:before {
+    border: 2px solid #fefcfe;
+    border-left-width: 0;
+    border-bottom-width: 0;
+    top: 18px;
+}
+.accordion .accordion__title:hover {
+    background: #455b64;
+}
+
+/* заголовок активного блока  */
+.accordion .active_block .accordion__title {
+    background: #455b64;
+    color: #fefcfe
+}
+
+/* контент */
+.accordion .accordion__content {
+    display: none;
+    padding: 10px 15px;
+    overflow: hidden;
+    background: #f7f8f7
+}
+
+@media (max-width:767px){
+    .accordion{
+        min-width: 290px;
+        padding: 20px;
+    }
+    .imege img{ 
+        min-width: 220px;
+    }
+    .accordion__content{
+        min-width: 220px;
+    }
+}
+
+@media (max-width:500px){
+    .accordion{
+        width: 300px;
+        padding: 20px;
+        font-size: 14px;
+    }
+    .imege img{ 
+        width: 300px;
+    }
+    .accordion__content{
+        width: 300px;
+    }
+    .accordion__title{
+        font-size: 14px;
+        width: 300px;
+    }
+}
